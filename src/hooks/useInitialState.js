@@ -24,6 +24,6 @@ const useInitialState = () => {
         removeFromCart
     };
     
-};
+}
 
 export default useInitialState
