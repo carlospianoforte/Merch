@@ -12,7 +12,8 @@ const Checkout = () => {
   };
 
   const handleSumTotal = () => {
-    const reducer = (accumulator, currentValue) => accumulator + currentValue.price;
+    const reducer = (accumulator, currentValue) => 
+      accumulator + (currentValue.price * currentValue.qty);
     const sum = cart.reduce(reducer, 0);
     return sum;
   };
@@ -20,20 +21,26 @@ const Checkout = () => {
   return (
     <div className="Checkout">
       <div className="Checkout-content">
-        {cart.length > 0 ? <h3>Lista de pedidos</h3> : <h3>No hay productos en el carrito</h3>}
-        {cart.map((item) => (
-
-          <div className="Checkout-item">
+        {cart.length > 0 
+        ?  <> 
+        <h3>Lista de pedidos</h3>
+        {cart.map(item => (
+          <div key={item.id} className="Checkout-item">
             <img  src={item.image} alt="" />
             <div className="Checkout-element">
               <h4>{item.title}</h4>
+              <span>Cant.{item.qty}</span>
               <span>${item.price}</span>
+              <span>Total: $ {item.price * item.qty}</span>
             </div>
             <button type='button' onClick={handleRemove(item)}>
               <i className='fas fa-trash-alt'></i>
             </button>
           </div>
         ))}
+        </>
+        : <h3>No hay articulos en el carrito</h3>}
+
       </div>
       {cart.length > 0 &&(
         <div className="Checkout-sidebar">
