@@ -1,10 +1,11 @@
 import React, { useRef, useContext} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import AppContext from '../context/AppContext'
 import '../styles/components/Information.scss'
 
-const Information = () => {
+const Information = ({ history }) => {
   const { state, addToBuyer } = useContext(AppContext);
+  const navigate = useNavigate();
   const form = useRef(null);
 
   const { cart } = state;
@@ -24,6 +25,7 @@ const Information = () => {
 
     }
     addToBuyer(buyer);
+    navigate('/checkout/payment');
   }
 
 
@@ -37,7 +39,7 @@ const Information = () => {
           <form ref = {form}>
             <input type="text" placeholder='Nombre completo' name='name'/>
             <input type="text" placeholder='Correo electronico' name='email'/>
-            <input type="text" placeholder='Direccion' name='addres'/>
+            <input type="text" placeholder='Direccion' name='address'/>
             <input type="text" placeholder='Apto' name='apto'/>
             <input type="text" placeholder='Ciudad' name='city'/>
             <input type="text" placeholder='Pais' name='country'/>

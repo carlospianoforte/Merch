@@ -1,6 +1,11 @@
 export default {
     cart: [],
-    buyer: [],
+    buyer: [
+      {
+        'address': 'cll 9-A 1-A 04, Manizales',
+      }
+    ],
+    orders: [],
     products: [
       {
         'id': '1',
