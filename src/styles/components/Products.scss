@@ -1,6 +1,6 @@
 .Products-items {
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1.5rem;
+  grid-gap: 1rem;
   grid-row-gap: 1.5em;
   display: grid;
 }
@@ -10,15 +10,20 @@
   border-radius: 5px;
   margin: 0 0 20px 0;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .Products-item-info {
   padding: 10px;
+  margin-bottom: 20px;
 }
+
 .Products-item-info h2 {
-  font-size: 18px;
+  font-size: 3.1vmin;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
+  max-width: 100%;
 }
 .Products-item-info h2 span {
   color: #33b13a;
@@ -33,7 +38,7 @@
   border-radius: 5px 5px 0 0;
   object-fit: contain;
 }
-.Products-item button {
+.Products-items button {
   background: linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
   width: 100%;
   padding: 10px;
@@ -43,6 +48,8 @@
   cursor: pointer;
   font-size: 14px;
   font-weight: 300;
+  position: absolute;
+  bottom: 0px;
 }
 .Products-item button:hover {
   background-color: rgba(39,44,49,0.06);
