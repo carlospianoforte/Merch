@@ -5,11 +5,22 @@ body {
   padding: 0;
   color: #3c484e;
   font-family: 'Open Sans', sans-serif;
+
+/*   display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto; */
+/*   position: relative;
+  padding-bottom: 2em; */
+
 }
 
 .Main {
-  padding: 10px;
   grid-template-columns: minmax(auto, 768px);
   display: grid;
   justify-content: center;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  padding: 20px;
+
+
 }

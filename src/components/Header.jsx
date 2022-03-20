@@ -18,7 +18,7 @@ const Header = () => {
         <h1 className='Header-title'>Merch</h1> 
       </Link>
         <div className="Header-checkout">
-          <Link to='checkout/'>
+          <Link to='/checkout'>
           
             <i className='fas fa-shopping-basket'></i>
           </Link>

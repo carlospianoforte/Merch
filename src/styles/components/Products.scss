@@ -19,7 +19,7 @@
 }
 
 .Products-item-info h2 {
-  font-size: 3.1vmin;
+  font-size: calc(0.7em + 1vw);
   font-weight: bold;
   display: flex;
   justify-content: space-between;
